@@ -1,4 +1,4 @@
-![Static Badge](https://img.shields.io/badge/python-3.9-blue) 　![Static Badge](https://img.shields.io/badge/license-MIT-orange)　![Static Badge](https://img.shields.io/badge/DOI-to%20be%20supplemented-purple)　![Static Badge](https://img.shields.io/badge/Zenodo-to%20be%20supplemented-green)
+![Static Badge](https://img.shields.io/badge/python-3.9-blue)　![Static Badge](https://img.shields.io/badge/license-MIT-orange)　![Static Badge](https://img.shields.io/badge/DOI-to%20be%20supplemented-purple)　![Static Badge](https://img.shields.io/badge/Zenodo-to%20be%20supplemented-green)
 # AL_for_SL_SR
 - [Abstract](#abstract) 
 - [Mpdules](#modules)
@@ -9,25 +9,16 @@
 ## Abstract
 To be supplemented
 ## Modules
-* `get_data.py`:读取数据并构建初始训练集
-* `acquisition.py`:定义了多种获取函数，他们将决定模型在每轮主动学习中通过什么指标选择样本加入训练集
-## Module Description
-
 * `model.py`
   Implements the predictive models used in this study, together with the ensemble framework for uncertainty estimation and robust prediction.
-
 * `Handler.py`
   Manages the active learning process by maintaining and updating the labeled training set and unlabeled sample pool throughout each learning cycle.
-
 * `experiment.py`
   Provides high-level interfaces that integrate different components of the framework into reusable experimental workflows.
-
 * `run_methods.py`
   Encapsulates the complete active learning pipeline into callable functions to facilitate experiment reproducibility and large-scale evaluations.
-
 * `start.py`
   Contains the experimental configurations corresponding to the results reported in the manuscript. This script serves as the recommended entry point for reproducing the published experiments.
-
 * `run.py`
   Provides a low-level implementation of the active learning workflow, allowing users to customize the framework and explore additional parameter combinations beyond those considered in this study.
 ## Installation
