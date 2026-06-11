@@ -24,7 +24,7 @@ To be supplemented
 ## Installation
 Use the following command to create the virtual environment required for this project:
 ```
-conda env create =f environment.yml -n env_name
+conda env create -f environment.yml -n env_name
 ```
 
 ## Usage
