@@ -123,35 +123,32 @@ def run_one_task(config,n_jobs_per_process,process_num):
 
 #防止进程递归创建
 if __name__ == '__main__':
-    #以下为参数配置区————————————————————————————————————————————————————————————————————————————————————————————————————
-    #！！！！！运行前请务必反复检查参数是否配置正确,请从给出的备选项里选择参数填入配置
-    #！！！！！请不要修改变量类型，若某参数只跑一个值也请保留list形式
-    #默认使用并发池增加运行速度
-
-    max_n_jobs = 1 #最多同时使用的cpu核心数，在我们的服务器上绝对不能超过40，最好不要超过三十，和其他人共用服务器时适当减少；dnn需要单独跑，跑dnn时请设置此参数为1
-    model_list = ['dnn'] #使用什么模型跑代码，备选包括['lr','rf','xgb','dnn','df','svm']
-    #使用何种获取函数，备选项包括["random", "exploration", "exploitation", "dynamic", "dynamicbald", "bald", "similarity"]
+    #Parameter Configuration————————————————————————————————————————————————————————————————————————————————————————————————————
+    max_n_jobs = 1 #Maximum number of CPU cores used simultaneously
+    model_list = ['dnn'] #What model to use to run code, options include ['lr','rf','xgb','dnn','df','svm']
+    #What kind of function to use for obtaining, with options including ["random", "exploration", "exploitation", "dynamic", "dynamicbald", "bald", "similarity"]
     acquisition_function_list = ["random", "exploration", "exploitation", "bald", "similarity"]
-    cell_line_list = ['A549','Hela','Jurkat','K562']#跑哪些细胞系，备选项包括['A549','Hela','Jurkat','K562']
-    scores_list = ['sensitive']#标签数据中的打分标准，备选包括['sensitive','strong']
-    feature_type_list = ['function','protein']#特征数据类型，备选包括['function','protein']
-    dir_name = 'result_one_cycle_all_acf_only_dnn' #结果将储存在这个文件夹下，理论上可自由填写
-    positive_labels_list = [0,1]#预测的正标签，备选包括[0,1]分别对应SL和SR
-    n_start_list = [64,128,256]#初始训练集大小，理论上可自由填写
-    batch_size_list = [32,64]#每轮捕获的样本数量，理论上可自由填写
-    random_seed_list = [42,43,44,45,46]#随机种子，理论上可自由填写
-    #pool_ratio = 1#为了节省算力，在大细胞系里我们会考虑降低这个值，但后面会有单独逻辑判定，一般情况下此参数保持注释即可
-    save_genes = False #如果为True，则会额外生成一个文件记录每一轮获取的样本名称，否则只记录获取的样本数量
-    cold_start = False #如果为True，则会以冷启动方式启动，即在初始训练集出现过的样本不会在样本池中出现
-    one_cycle = True #如果为Ture，则模型会一次性学习one_cycle_num轮主动学习同样数量的样本并进行预测，作为对照组
-    max_cycle = 7 #最大学习轮数
-    ensemble_size = 10 #模型集群里有多少个不同随机初始化的模型，一般不需要动
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))#根地址，一般来说不需要修改
-    learning_rate = 0.01 #学习率，仅对dnn模型生效
-    dropout_rate = 0.2 #模型每轮drop掉的神经元比例，设置较大时可缓解过拟合症状
-    epochs = 10 #dnn模型训练的轮数
-    cycle_to_draw = 5 #用于one_cycle策略，请填入实际画图用了多少轮，一般不用动
-    #以上为参数配置区————————————————————————————————————————————————————————————————————————————————————————————————————
+    cell_line_list = ['A549','Hela','Jurkat','K562']#Which cell lines to run, options include['A549','Hela','Jurkat','K562']
+    scores_list = ['sensitive']#The scoring criteria in the tag data, including alternative options ['sensitive','strong']
+    feature_type_list = ['function','protein']#Feature data types, including alternative options['function','protein']
+    dir_name = 'result_one_cycle_all_acf_only_dnn' #The results will be stored in this folder
+    positive_labels_list = [0,1]#The predicted positive labels include [0,1] corresponding to SL and SR
+    n_start_list = [64,128,256]#Initial training set size
+    batch_size_list = [32,64]#The number of samples captured in each round
+    random_seed_list = [42,43,44,45,46]
+    #pool_ratio = 1#In order to save computing power, we will consider reducing this value in large cell lines, but there will be separate logical judgments later.
+    # Generally, this parameter can be kept annotated
+    save_genes = False #If True, an additional file will be generated to record the names of the samples obtained in each round, otherwise only the number of samples obtained will be recorded
+    cold_start = False #If True, it will start in a cold start mode, meaning that samples that have appeared in the initial training set will not appear in the sample pool
+    one_cycle = True #If it is Ture, the model will learn the one_cycle_num wheel at once to actively learn the same number of samples and make predictions, serving as the control group
+    max_cycle = 7 #Maximum number of learning rounds
+    ensemble_size = 10 #How many different randomly initialized models are there in the model cluster
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    learning_rate = 0.01 #Only applicable to DNN models
+    dropout_rate = 0.2 #Only applicable to DNN models
+    epochs = 10 #Only applicable to DNN models
+    cycle_to_draw = 5 #Only applicable to DNN models
+    #Parameter Configuration————————————————————————————————————————————————————————————————————————————————————————————————————
 
 
 
