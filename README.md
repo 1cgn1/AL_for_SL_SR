@@ -22,11 +22,13 @@ To be supplemented
 * `run.py`
   Provides a low-level implementation of the active learning workflow, allowing users to customize the framework and explore additional parameter combinations beyond those considered in this study.
 ## Installation
-Use the following command to create the virtual environment required for this project:
+We recommend creating a fresh Conda environment:
 ```
 conda env create -f environment.yml -n env_name
 ```
-
+PyTorch is not included in environment.yml because the appropriate build depends on the user's operating system, CUDA version, GPU driver, and hardware platform.
+If you want to run the DNN model, please install PyTorch manually by following the official instructions:
+https://pytorch.org/get-started/locally/
 ## Usage
 ### Data Preparation
 Before running the active learning pipeline using the datasets described in the manuscript, the corresponding label files and feature files must be downloaded from `to be supplemented` and placed in the root directory of this project.
