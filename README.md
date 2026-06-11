@@ -26,9 +26,7 @@ Use the following command to create the virtual environment required for this pr
 ```
 conda env create =f environment.yml -n env_name
 ```
-## Usage
-### Data 
-Before running the active learning pipeline on the same data used in the paper, the label and feature needs to be downloaded on `to be supplemented` and be placed in the root directory of the project. Please leave at least 10 GB hard disk space. 
+
 ## Usage
 ### Data Preparation
 Before running the active learning pipeline using the datasets described in the manuscript, the corresponding label files and feature files must be downloaded from `to be supplemented` and placed in the root directory of this project.
