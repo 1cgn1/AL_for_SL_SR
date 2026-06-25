@@ -29,6 +29,12 @@ conda env create -f environment.yml -n env_name
 PyTorch is not included in environment.yml because the appropriate build depends on the user's operating system, CUDA version, GPU driver, and hardware platform.
 If you want to run the DNN model, please install PyTorch manually by following the official instructions:
 https://pytorch.org/get-started/locally/
+An incomplete small dataset is inclueded in this repository for testing purposes. Run the following command to verify that the environment has been correctly configured:
+'''
+python start.py test
+'''
+Successful execution indicates that all dependencies have been installed properly.
+Please note that the toy dataset is provided only for testing the software pipeline. The full datasets used in the study are available on Zenodo and are required to reproduce the results reported in the manuscript.
 ## Usage
 ### Data Preparation
 Before running the active learning pipeline using the datasets described in the manuscript, the corresponding label files and feature files must be downloaded from `to be supplemented` and placed in the root directory of this project.
