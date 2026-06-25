@@ -129,3 +129,27 @@ if experiment_type == 'cold_start':
             epochs=10,
             cycle_to_draw=5
         )
+if experiment_type == 'test':
+    if __name__ == '__main__':
+        run_experiment(
+            max_n_jobs=1,
+            model_list=['lr', 'rf', 'xgb', 'dnn', 'df'],
+            acquisition_function_list=['random'],
+            cell_line_list=['A549'],
+            scores_list=['sensitive'],
+            feature_type_list=['function'],
+            dir_name='results_test',
+            positive_labels_list=[0],
+            n_start_list=[64],
+            batch_size_list=[32],
+            random_seed_list=[42],
+            save_genes=False,
+            cold_start=False,
+            one_cycle=False,
+            max_cycle=5,
+            ensemble_size=10,
+            learning_rate=0.01,
+            dropout_rate=0.2,
+            epochs=10,
+            cycle_to_draw=5,
+        )

@@ -50,7 +50,8 @@ def run_one_task(config,n_jobs_per_process,process_num):
                                             feature_type_for_exp = 'float32'
                                         #处理one_cycle的逻辑，因为参数不一样所以需要单独拿出来
                                         if config['one_cycle']:
-                                            batch_size = batch_size * config['cycle_to_draw'] #这里需要根据实际画图用了多少轮修改
+                                            if random_seed == config['random_seed'][0]:
+                                                batch_size = batch_size * config['cycle_to_draw'] #这里需要根据实际画图用了多少轮修改
                                             exp = Experiment(
                                                 file_path=DATA_FILE,
                                                 feature_cols=feature_cols,
