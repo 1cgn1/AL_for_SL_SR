@@ -7,7 +7,7 @@
 - [License](#license)
 
 ## Abstract
-To be supplemented
+Synthetic lethality (SL) and synthetic rescue (SR) gene pairs are promising targets for cancer therapy, but their systematic identification is hindered by a vast combinatorial search space and limited samples. Active learning offers a potential solution for low-data discovery tasks, yet its effectiveness in SL and SR contexts has not been systematically explored. Here, we simulates a low-data scenario, and systematically analyzes active learning strategies for iterative SL/SR gene-pair prioritization using combinatorial CRISPR double-knockout data. Across different cell lines, feature representations and machine-learning models, active learning consistently improves SL/SR discovery compared with non-iterative and random sampling approaches in low data setting. Notably, Acquisition strategy was the major factor to performance variation. Although no single strategy was universally optimal, dynamic strategies appeared most frequently among the top-performing strategies in SL, whereas exploitation strategies dominated in SR. Overall, these results demonstrate that active learning provides a robust but context-sensitive framework for improving SL/SR gene-pair discovery under limited experimental budgets.
 ## Modules
 * `model.py`
   Implements the predictive models used in this study, together with the ensemble framework for uncertainty estimation and robust prediction.
