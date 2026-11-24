@@ -1,4 +1,4 @@
-![Static Badge](https://img.shields.io/badge/python-3.9-blue)　![Static Badge](https://img.shields.io/badge/license-MIT-orange)　![Static Badge](https://img.shields.io/badge/DOI-to%20be%20supplemented-purple)　![Static Badge](https://img.shields.io/badge/Zenodo-to%20be%20supplemented-green)
+![Static Badge](https://img.shields.io/badge/python-3.9-blue)　![Static Badge](https://img.shields.io/badge/license-MIT-orange)　![Static Badge](https://img.shields.io/badge/DOI-to%20be%20supplemented-purple)
 # AL_for_SL_SR
 
 - [Abstract](#abstract)
